@@ -145,9 +145,9 @@ class KnovusAutoClaim {
           writes: [
             {
               currentDocument: { updateTime: currentUpdateTime },
-              update: {
-                name: `projects/${CONFIG.PROJECT_ID}/databases/(default)/documents/users/${userId}`,
-                updateTransforms: [
+              transform: {
+                document: `projects/${CONFIG.PROJECT_ID}/databases/(default)/documents/users/${userId}`,
+                fieldTransforms: [
                   {
                     fieldPath: "points",
                     increment: {
